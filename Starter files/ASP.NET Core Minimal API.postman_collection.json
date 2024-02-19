@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "74fd1f8b-92bb-42b3-bc4b-7504604f66be",
+		"name": "ASP.NET Core Minimal API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "805617"
+	},
+	"item": [
+		{
+			"name": "GET WeatherForecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/weatherforecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dish",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/fd630a57-2352-4731-b25c-db9cc7601b16",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"fd630a57-2352-4731-b25c-db9cc7601b16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ingredients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/fd630a57-2352-4731-b25c-db9cc7601b16/ingredients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"fd630a57-2352-4731-b25c-db9cc7601b16",
+						"ingredients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dish (by name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/Rendang",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"Rendang"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dishes (filtered)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes?name=Mussels",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mussels"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dish (not found)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/b539b05a-4c49-44b4-98fc-3b072d5fd3f8",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"b539b05a-4c49-44b4-98fc-3b072d5fd3f8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Dish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Hawaii\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Dish",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Dish\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/fd630a57-2352-4731-b25c-db9cc7601b16",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"fd630a57-2352-4731-b25c-db9cc7601b16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Dish",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/fd630a57-2352-4731-b25c-db9cc7601b16",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"fd630a57-2352-4731-b25c-db9cc7601b16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Ingredient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pizza Hawaii\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Dish (Flemish Stew)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/eacc5169-b2a7-41ad-92c3-dbb1a5e7af06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"eacc5169-b2a7-41ad-92c3-dbb1a5e7af06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Dish (not found)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes/e6c79d8c-8ab1-4b88-ab17-b008e21e053e",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes",
+						"e6c79d8c-8ab1-4b88-ab17-b008e21e053e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Dish (invalid - name too short))",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"A\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Dish (invalid - name null)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": null\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/dishes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
