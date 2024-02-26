@@ -79,7 +79,7 @@ app.RegisterDishesEndpoints();
 app.RegisterIngredientsEndpoints();
 
 // recreate & migrate the database on each run, for demo purposes
-using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())
+using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
 {
     var context = serviceScope.ServiceProvider.GetRequiredService<DishesDbContext>();
     context.Database.EnsureDeleted();

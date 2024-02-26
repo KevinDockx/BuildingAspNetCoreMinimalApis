@@ -1,13 +1,8 @@
 ﻿namespace DishesAPI.EndpointFilters;
 
-public class DishIsLockedFilter : IEndpointFilter
+public class DishIsLockedFilter(Guid lockedDishId) : IEndpointFilter
 {
-    private readonly Guid _lockedDishId;
-
-    public DishIsLockedFilter(Guid lockedDishId)
-    {
-        _lockedDishId = lockedDishId;
-    }
+    private readonly Guid _lockedDishId = lockedDishId;
 
     public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
