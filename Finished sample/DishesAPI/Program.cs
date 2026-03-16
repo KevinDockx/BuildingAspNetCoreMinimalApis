@@ -2,6 +2,7 @@ using DishesAPI.DbContexts;
 using DishesAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DishesDbContext>(o => o.UseSqlite(
     builder.Configuration["ConnectionStrings:DishesDBConnectionString"]));
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+// register AutoMapper-related services
+builder.Services.AddAutoMapper(config => { },
+    AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddProblemDetails();
 
